@@ -7,8 +7,8 @@ var direction = Vector2()
 func _ready():
 	randomize()
 	screen_size = get_viewport_rect().size
-	direction.x = rand_range(PI / 2, -PI / 2)
-	direction.y = rand_range(PI / 2, -PI / 2)
+	direction.x = rand_range(0, 2 * PI)
+	direction.y = rand_range(0, 2 * PI)
 
 func _process(delta):
 	compute_velocity(delta)
