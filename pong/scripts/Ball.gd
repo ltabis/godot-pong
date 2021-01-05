@@ -2,15 +2,15 @@ extends Area2D
 
 export var speed = 200
 var screen_size
-var direction = Vector2()
-
-enum CollisionType { BAR, BOUNDARY }
+var direction
 
 func _ready():
 	randomize()
+
+	var angle = rand_range(0, 2 * PI)
+
 	screen_size = get_viewport_rect().size
-	direction.x = rand_range(0, 2 * PI)
-	direction.y = rand_range(0, 2 * PI)
+	direction = Vector2(cos(angle), sin(angle))
 
 func _process(delta):
 	compute_velocity(delta)
@@ -18,22 +18,26 @@ func _process(delta):
 func _physics_process(delta):
 	detect_boundary()
 
-func bounce(collider):
-	if collider == CollisionType.BOUNDARY:
-		print("boundary hit")
-	elif collider == CollisionType.BAR:
-		print("bar hit")
+func bounce(normal):
+	var pos = position.normalized()
 
 func compute_velocity(delta):
-	position.x += cos(direction.x) * speed * delta
-	position.y += sin(direction.y) * speed * delta
+	position.x += direction.x * speed * delta
+	position.y += direction.y * speed * delta
 
 func detect_boundary():
-	if position.x > screen_size.x or position.x < 0:
-		bounce(CollisionType.BOUNDARY)
-	elif position.y > screen_size.y or position.y < 0:
-		bounce(CollisionType.BOUNDARY)
+
+	var radius = $CollisionShape2D.shape.radius
+
+	if position.x + radius > screen_size.x:
+		direction.x = -direction.x
+	elif position.x - radius < 0:
+		direction.x = -direction.x
+	elif position.y + radius > screen_size.y:
+		direction.y = -direction.y
+	elif position.y - radius < 0:
+		direction.y = -direction.y
 
 func _on_Ball_area_entered(area):
 	if area.get_name() == "Bar":
-		bounce(CollisionType.BAR)
+		bounce(Vector2())
