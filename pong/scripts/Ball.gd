@@ -18,9 +18,6 @@ func _process(delta):
 func _physics_process(delta):
 	detect_boundary()
 
-func bounce(normal):
-	var pos = position.normalized()
-
 func compute_velocity(delta):
 	position.x += direction.x * speed * delta
 	position.y += direction.y * speed * delta
@@ -40,4 +37,4 @@ func detect_boundary():
 
 func _on_Ball_area_entered(area):
 	if area.get_name() == "Bar":
-		bounce(Vector2())
+		direction.x = -direction.x
