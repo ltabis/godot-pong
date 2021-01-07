@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/Menu.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=2]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -301.997
+margin_top = -363.558
+margin_right = 296.003
+margin_bottom = -241.558
+custom_fonts/font = ExtResource( 1 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -1.49829
+margin_top = -5.50171
+margin_right = -1.49829
+margin_bottom = 51.4983
+custom_fonts/font = ExtResource( 1 )
+text = "Godot Pong!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
