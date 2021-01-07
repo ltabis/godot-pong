@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed = 200
+export var speed = 500
 var screen_size
 var direction
 
@@ -36,5 +36,5 @@ func detect_boundary():
 		direction.y = -direction.y
 
 func _on_Ball_area_entered(area):
-	if area.get_name() == "Bar":
+	if area.get_name() == "Bar" or area.get_name() == "IA":
 		direction.x = -direction.x

@@ -5,15 +5,24 @@ var screen_size
 
 enum Difficulty { EASY, MEDIUM, HARD }
 var difficulty = Difficulty.EASY
+var direction = 1
 
 func _ready():
 	screen_size = get_viewport_rect().size
 
 func _process(delta):
-	pass
+	compute_easy_ia(delta)
 
-func compute_easy_ia():
-	pass
+func compute_easy_ia(delta):
+	var velocity = 0
+
+	position.y += direction * speed * delta
+
+	var collider = $CollisionShape2D.get_shape()
+
+	# prevents the bar to go outside of the screen
+	if position.y < collider.extents.y or position.y > screen_size.y - collider.extents.y:
+		direction = -direction
 
 func compute_medium_ia():
 	pass
