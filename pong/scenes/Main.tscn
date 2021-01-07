@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
-
+[ext_resource path="res://scenes/IA.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node"]
 
@@ -10,3 +10,6 @@
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 position = Vector2( 261.947, 229.451 )
+
+[node name="IA" parent="." instance=ExtResource( 3 )]
+position = Vector2( 962.29, 254.451 )
