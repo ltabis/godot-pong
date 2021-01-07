@@ -1,4 +1,5 @@
 extends Area2D
+class_name Player
 
 export var speed = 600
 var screen_size

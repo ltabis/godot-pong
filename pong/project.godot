@@ -8,9 +8,38 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Ball",
+"language": "GDScript",
+"path": "res://scripts/Ball.gd"
+}, {
+"base": "Node",
+"class": "GameLoop",
+"language": "GDScript",
+"path": "res://scripts/GameLoop.gd"
+}, {
+"base": "Area2D",
+"class": "IA",
+"language": "GDScript",
+"path": "res://scripts/IA.gd"
+}, {
+"base": "CanvasLayer",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://scripts/MainMenu.gd"
+}, {
+"base": "Area2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/Player.gd"
+} ]
 _global_script_class_icons={
-
+"Ball": "",
+"GameLoop": "",
+"IA": "",
+"MainMenu": "",
+"Player": ""
 }
 
 [application]

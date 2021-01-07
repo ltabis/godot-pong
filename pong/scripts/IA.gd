@@ -1,4 +1,5 @@
 extends Area2D
+class_name IA
 
 export var speed = 400
 var screen_size

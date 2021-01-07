@@ -1,4 +1,5 @@
 extends Area2D
+class_name Ball
 
 export var speed = 500
 var screen_size
