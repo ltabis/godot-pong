@@ -7,9 +7,10 @@
 [node name="Main" type="Node"]
 
 [node name="Bar" parent="." instance=ExtResource( 2 )]
+position = Vector2( 85.7008, 548.776 )
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 261.947, 229.451 )
+position = Vector2( 971.102, 514.484 )
 
 [node name="IA" parent="." instance=ExtResource( 3 )]
-position = Vector2( 962.29, 254.451 )
+position = Vector2( 1835.37, 539.484 )
