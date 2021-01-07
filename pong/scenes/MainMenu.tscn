@@ -12,9 +12,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -301.997
-margin_top = -363.558
+margin_top = -442.13
 margin_right = 296.003
-margin_bottom = -241.558
+margin_bottom = -320.13
 custom_fonts/font = ExtResource( 1 )
 text = "Start"
 __meta__ = {
@@ -33,6 +33,23 @@ custom_fonts/font = ExtResource( 1 )
 text = "Godot Pong!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="MenuButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -210.5
+margin_top = -239.921
+margin_right = 210.5
+margin_bottom = -118.921
+custom_fonts/font = ExtResource( 1 )
+text = "Difficulty"
+expand_icon = true
+items = [ "Easy", null, 0, false, false, 0, 0, null, "", false, "Medium", null, 0, false, false, 1, 0, null, "", false, "Hard", null, 0, false, false, 2, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
