@@ -21,3 +21,4 @@ position = Vector2( 971.102, 514.484 )
 position = Vector2( 1835.37, 539.484 )
 
 [node name="MainMenu" parent="." instance=ExtResource( 4 )]
+[connection signal="start" from="MainMenu" to="Game" method="_on_MainMenu_start"]
