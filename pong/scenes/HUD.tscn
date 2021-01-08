@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/fonts/Menu.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/Score.gd" type="Script" id=2]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -12,6 +13,7 @@ margin_right = -69.135
 margin_bottom = 57.0
 custom_fonts/font = ExtResource( 1 )
 text = "0"
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,6 +26,7 @@ margin_right = 100.726
 margin_bottom = 57.0
 custom_fonts/font = ExtResource( 1 )
 text = "0"
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
