@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/fonts/Menu.tres" type="DynamicFont" id=1]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="RightScore" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -109.135
+margin_right = -69.135
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftScore" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 60.726
+margin_right = 100.726
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Separation" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 1 )
+text = "|"
+__meta__ = {
+"_edit_use_anchors_": false
+}

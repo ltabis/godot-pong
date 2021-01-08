@@ -44,4 +44,3 @@ func _on_Ball_area_entered(area):
 
 func _on_Viewport_size_changed():
 	screen_size = get_viewport_rect().size
-	print("passed" + str(screen_size))
