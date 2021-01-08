@@ -13,6 +13,8 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	direction = Vector2(cos(angle), sin(angle))
 
+	get_tree().root.connect("size_changed", self, "_on_Viewport_size_changed")
+
 func _process(delta):
 	compute_velocity(delta)
 
@@ -39,3 +41,7 @@ func detect_boundary():
 func _on_Ball_area_entered(area):
 	if area.get_name() == "Bar" or area.get_name() == "IA":
 		direction.x = -direction.x
+
+func _on_Viewport_size_changed():
+	screen_size = get_viewport_rect().size
+	print("passed" + str(screen_size))
