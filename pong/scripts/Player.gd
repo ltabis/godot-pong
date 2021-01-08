@@ -6,7 +6,7 @@ var screen_size
 
 func _ready():
 	screen_size = get_viewport_rect().size
-	self.connect("restart", self, "_on_Game_restart")
+	get_parent().connect("restart", self, "_on_Game_restart")
 
 func _process(delta):
 	compute_controlls(delta)

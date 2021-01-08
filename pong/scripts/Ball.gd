@@ -16,7 +16,7 @@ func _ready():
 	random_direction()
 
 	get_tree().root.connect("size_changed", self, "_on_Viewport_size_changed")
-	self.connect("restart", self, "_on_Game_restart")
+	get_parent().connect("restart", self, "_on_Game_restart")
 
 func _process(delta):
 	compute_velocity(delta)
