@@ -3,16 +3,24 @@ class_name GameLoop
 
 signal update_score
 signal restart
+signal pause
 signal start
 signal stop
 
 enum Players { PLAYER1, PLAYER2 }
 
 var is_running = false
+var pausing = false
 
 func _ready():
 	set_game_state(false)
 	$Ball.connect("out_of_bounds", self, "new_round")
+
+func _process(delta):
+	if pausing != true and Input.is_action_pressed("ui_cancel"):
+		emit_signal("pause")
+		set_game_state(false)
+		pausing = true
 
 func _on_MainMenu_start(difficulty):
 	$IA.difficulty = difficulty
@@ -24,6 +32,10 @@ func set_game_state(state):
 		child.show() if state else child.hide()
 		child.set_process(state)
 		is_running = state
+
+func resume():
+	pausing = false
+	set_game_state(true)
 
 func new_round(bound):
 	if bound == Ball.Bounds.LEFT:

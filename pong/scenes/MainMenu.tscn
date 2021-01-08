@@ -26,7 +26,7 @@ text = "Godot Pong!"
 align = 1
 valign = 1
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="StartButton" type="Button" parent="."]
@@ -42,7 +42,7 @@ custom_fonts/font = ExtResource( 1 )
 shortcut = SubResource( 2 )
 text = "Start"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Difficulty" type="Label" parent="."]
@@ -58,7 +58,7 @@ text = "Difficulty"
 align = 1
 valign = 1
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="MenuButton" type="MenuButton" parent="."]
@@ -76,6 +76,6 @@ expand_icon = true
 items = [ "Easy", null, 0, false, false, 0, 0, null, "", false, "Medium", null, 0, false, false, 1, 0, null, "", false, "Hard", null, 0, false, false, 2, 0, null, "", false ]
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 [connection signal="pressed" from="StartButton" to="." method="_on_Button_pressed"]
