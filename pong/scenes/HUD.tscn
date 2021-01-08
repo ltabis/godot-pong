@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/fonts/Menu.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/Score.gd" type="Script" id=2]
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=3]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource( 3 )
 
-[node name="RightScore" type="Label" parent="."]
+[node name="LeftScore" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -109.135
@@ -18,7 +20,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeftScore" type="Label" parent="."]
+[node name="RightScore" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 60.726

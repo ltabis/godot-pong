@@ -10,6 +10,7 @@ var direction = 1
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	self.connect("restart", self, "_on_Game_restart")
 
 func _process(delta):
 	if difficulty == Difficulty.EASY:
@@ -39,3 +40,6 @@ func compute_hard_ia(delta):
 # external scripts can manipulate the ia difficulty
 func set_difficulty(value):
 	difficulty = value
+
+func _on_Game_restart():
+	position = Vector2(position.x, screen_size.y / 2)

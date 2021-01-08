@@ -5,10 +5,11 @@ export var speed = 600
 var screen_size
 
 func _ready():
-	   screen_size = get_viewport_rect().size
+	screen_size = get_viewport_rect().size
+	self.connect("restart", self, "_on_Game_restart")
 
 func _process(delta):
-	   compute_controlls(delta)
+	compute_controlls(delta)
 
 func compute_controlls(delta):
 
@@ -25,3 +26,6 @@ func compute_controlls(delta):
 
 	# prevents the bar to go outside of the screen
 	position.y = clamp(position.y, collider.extents.y, screen_size.y - collider.extents.y)
+
+func _on_Game_restart():
+	position = Vector2(position.x, screen_size.y / 2)
