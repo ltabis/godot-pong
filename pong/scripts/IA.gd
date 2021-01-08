@@ -12,7 +12,12 @@ func _ready():
 	screen_size = get_viewport_rect().size
 
 func _process(delta):
-	compute_easy_ia(delta)
+	if difficulty == Difficulty.EASY:
+		compute_easy_ia(delta)
+	elif difficulty == Difficulty.MEDIUM:
+		compute_medium_ia(delta)
+	elif difficulty == Difficulty.HARD:
+		compute_hard_ia(delta)
 
 func compute_easy_ia(delta):
 	var velocity = 0
@@ -25,10 +30,10 @@ func compute_easy_ia(delta):
 	if position.y < collider.extents.y or position.y > screen_size.y - collider.extents.y:
 		direction = -direction
 
-func compute_medium_ia():
+func compute_medium_ia(delta):
 	pass
 
-func compute_hard_ia():
+func compute_hard_ia(delta):
 	pass
 
 # external scripts can manipulate the ia difficulty
