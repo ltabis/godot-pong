@@ -14,13 +14,13 @@ shortcut = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
-anchor_top = 0.5
+anchor_top = 0.225926
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 0.225926
 margin_left = -1.49829
-margin_top = -91.5017
+margin_top = 38.4983
 margin_right = -1.49829
-margin_bottom = -34.5017
+margin_bottom = 95.4983
 custom_fonts/font = ExtResource( 1 )
 text = "Godot Pong!"
 align = 1
@@ -31,28 +31,44 @@ __meta__ = {
 
 [node name="StartButton" type="Button" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.725926
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.725926
 margin_left = -301.997
-margin_top = -532.13
+margin_top = -402.13
 margin_right = 296.003
-margin_bottom = -410.13
+margin_bottom = -280.13
 custom_fonts/font = ExtResource( 1 )
 shortcut = SubResource( 2 )
 text = "Start"
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -301.997
+margin_top = -164.13
+margin_right = 296.003
+margin_bottom = -42.13
+custom_fonts/font = ExtResource( 1 )
+shortcut = SubResource( 2 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="Difficulty" type="Label" parent="."]
-anchor_top = 1.0
+anchor_top = 0.642593
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.642593
 margin_left = -1.49829
-margin_top = -253.0
+margin_top = -123.0
 margin_right = -1.49829
-margin_bottom = -196.0
+margin_bottom = -66.0
 custom_fonts/font = ExtResource( 1 )
 text = "Difficulty"
 align = 1
@@ -63,19 +79,20 @@ __meta__ = {
 
 [node name="MenuButton" type="MenuButton" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.642593
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.642593
 margin_left = -210.5
-margin_top = -196.0
+margin_top = -66.0
 margin_right = 210.5
-margin_bottom = -75.0
+margin_bottom = 55.0
 custom_fonts/font = ExtResource( 1 )
 text = "EASY"
 expand_icon = true
 items = [ "Easy", null, 0, false, false, 0, 0, null, "", false, "Medium", null, 0, false, false, 1, 0, null, "", false, "Hard", null, 0, false, false, 2, 0, null, "", false ]
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 [connection signal="pressed" from="StartButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
