@@ -10,9 +10,10 @@ script = ExtResource( 3 )
 [node name="LeftScore" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -109.135
-margin_right = -69.135
-margin_bottom = 57.0
+margin_left = -107.453
+margin_top = 63.9081
+margin_right = -67.4532
+margin_bottom = 120.908
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 script = ExtResource( 2 )
@@ -23,9 +24,10 @@ __meta__ = {
 [node name="RightScore" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 60.726
-margin_right = 100.726
-margin_bottom = 57.0
+margin_left = 62.4077
+margin_top = 63.9081
+margin_right = 102.408
+margin_bottom = 120.908
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 script = ExtResource( 2 )
@@ -36,11 +38,22 @@ __meta__ = {
 [node name="Separation" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.0
-margin_right = 20.0
-margin_bottom = 57.0
+margin_left = -18.3182
+margin_top = 63.9081
+margin_right = 21.6818
+margin_bottom = 120.908
 custom_fonts/font = ExtResource( 1 )
 text = "|"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goal" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

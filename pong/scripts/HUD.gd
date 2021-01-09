@@ -6,8 +6,9 @@ signal start
 func _ready():
 	hide_children()
 
-func game_started():
+func game_started(goal):
 	show_children()
+	$Goal.text = "First at " + str(goal)
 	emit_signal("start")
 
 func update_score(player):

@@ -54,6 +54,6 @@ func _on_Ball_area_entered(area):
 func _on_Viewport_size_changed():
 	screen_size = get_viewport_rect().size
 
-func _on_Game_restart():
+func _on_Game_restart(goal):
 	position = Vector2(screen_size.x / 2, screen_size.y / 2)
 	random_direction()

@@ -41,5 +41,5 @@ func compute_hard_ia(delta):
 func set_difficulty(value):
 	difficulty = value
 
-func _on_Game_restart():
+func _on_Game_restart(goal):
 	position = Vector2(position.x, screen_size.y / 2)

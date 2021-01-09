@@ -2,16 +2,16 @@ extends Node
 class_name GameLoop
 
 signal update_score
-signal restart
+signal restart(goal)
 signal pause
-signal start
+signal start(goal)
 signal stop
 signal win(player)
 
 enum Players { PLAYER1, PLAYER2 }
 
 var pausing = false
-var score_limit = 2
+var score_limit = 1
 var score_player_1 = 0
 var score_player_2 = 0
 
@@ -28,7 +28,7 @@ func _process(delta):
 func _on_MainMenu_start(difficulty):
 	$IA.difficulty = difficulty
 	set_game_state(true)
-	emit_signal("start")
+	emit_signal("start", score_limit)
 
 func set_game_state(state):
 	for child in self.get_children():
@@ -47,7 +47,10 @@ func game_end(player):
 func game_restart():
 	pausing = false
 	set_game_state(true)
-	emit_signal("restart")
+	emit_signal("restart", score_limit)
+
+func get_score_limit():
+	return score_limit
 
 func new_round(bound):
 	if bound == Ball.Bounds.RIGHT:
@@ -62,4 +65,4 @@ func new_round(bound):
 	elif score_player_2 >= score_limit:
 		game_end(Players.PLAYER2)
 	else:
-		emit_signal("restart")
+		emit_signal("restart", score_limit)

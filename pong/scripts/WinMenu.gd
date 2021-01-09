@@ -1,14 +1,14 @@
 extends CanvasLayer
 
 signal stop
-signal restart
+signal new_game
 
 func _ready():
 	hide_children()
 
 func _on_RestartButton_pressed():
 	hide_children()
-	emit_signal("restart")
+	emit_signal("new_game")
 
 func _on_QuitButton_pressed():
 	hide_children()
