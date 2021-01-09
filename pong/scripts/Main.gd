@@ -8,6 +8,7 @@ func _ready():
 	$Game.connect("pause", self, "_on_Game_pause")
 	$PauseMenu.connect("resume", self, "_on_Game_resume")
 	$PauseMenu.connect("stop", self, "_on_Game_quit")
+	$PauseMenu.connect("stop", self, "_on_Game_quit")
 
 func _on_Score_updated(player):
 	$HUD.update_score(player)
