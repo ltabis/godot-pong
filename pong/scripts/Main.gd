@@ -6,6 +6,7 @@ func _ready():
 	$Game.connect("start", self, "_on_Game_start")
 	$Game.connect("restart", self, "_on_Game_restart")
 	$Game.connect("pause", self, "_on_Game_pause")
+	$Game.connect("win", self, "_on_Game_won")
 	$PauseMenu.connect("resume", self, "_on_Game_resume")
 	$PauseMenu.connect("stop", self, "_on_Game_quit")
 	$WinMenu.connect("restart", self, "_on_Game_restart")
@@ -30,3 +31,6 @@ func _on_Game_resume():
 
 func _on_Game_quit():
 	get_tree().quit()
+
+func _on_Game_won(player):
+	$WinMenu.display(player)

@@ -34,10 +34,10 @@ func detect_boundary():
 
 	if position.x + radius > screen_size.x:
 		direction.x = -direction.x
-		emit_signal("out_of_bounds", Bounds.LEFT)
+		emit_signal("out_of_bounds", Bounds.RIGHT)
 	elif position.x - radius < 0:
 		direction.x = -direction.x
-		emit_signal("out_of_bounds", Bounds.RIGHT)
+		emit_signal("out_of_bounds", Bounds.LEFT)
 	elif position.y + radius > screen_size.y:
 		direction.y = -direction.y
 	elif position.y - radius < 0:
