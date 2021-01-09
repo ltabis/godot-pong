@@ -11,7 +11,7 @@ signal win(player)
 enum Players { PLAYER1, PLAYER2 }
 
 var pausing = false
-var score_limit = 1
+var score_limit = 2
 var score_player_1 = 0
 var score_player_2 = 0
 
