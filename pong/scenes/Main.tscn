@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=7]
 [ext_resource path="res://scenes/PauseMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/WinMenu.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node"]
 script = ExtResource( 7 )
@@ -29,4 +30,6 @@ position = Vector2( 1835.37, 539.484 )
 [node name="MainMenu" parent="." instance=ExtResource( 4 )]
 
 [node name="PauseMenu" parent="." instance=ExtResource( 8 )]
+
+[node name="WinMenu" parent="." instance=ExtResource( 9 )]
 [connection signal="start" from="MainMenu" to="Game" method="_on_MainMenu_start"]

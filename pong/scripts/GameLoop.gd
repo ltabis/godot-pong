@@ -9,8 +9,8 @@ signal stop
 
 enum Players { PLAYER1, PLAYER2 }
 
-var is_running = false
 var pausing = false
+var score_limit = 5
 
 func _ready():
 	set_game_state(false)
@@ -31,7 +31,6 @@ func set_game_state(state):
 	for child in self.get_children():
 		child.show() if state else child.hide()
 		child.set_process(state)
-		is_running = state
 
 func resume():
 	pausing = false
