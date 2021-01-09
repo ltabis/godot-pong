@@ -4,7 +4,6 @@ class_name Main
 func _ready():
 	$Game.connect("update_score", self, "_on_Score_updated")
 	$Game.connect("start", self, "_on_Game_start")
-	$Game.connect("restart", self, "_on_Game_restart")
 	$Game.connect("pause", self, "_on_Game_pause")
 	$Game.connect("win", self, "_on_Game_won")
 	$PauseMenu.connect("resume", self, "_on_Game_resume")
@@ -20,6 +19,7 @@ func _on_Game_start():
 
 func _on_Game_restart():
 	$HUD.game_started()
+	$Game.game_restart()
 
 func _on_Game_pause():
 	$PauseMenu.pause()
@@ -34,3 +34,4 @@ func _on_Game_quit():
 
 func _on_Game_won(player):
 	$WinMenu.display(player)
+	$HUD.hide_children()

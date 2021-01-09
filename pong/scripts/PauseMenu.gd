@@ -12,8 +12,8 @@ func _process(delta):
 	if !pausing:
 		return
 	
-	# if Input.is_action_pressed("ui_cancel"):
-	# 	resume()
+	# if Input.is_action_just_pressed("ui_cancel"):
+	#	resume()
 
 func _on_ResumeButton_pressed():
 	resume()

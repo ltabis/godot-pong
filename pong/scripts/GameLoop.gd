@@ -39,6 +39,16 @@ func resume():
 	pausing = false
 	set_game_state(true)
 
+func game_end(player):
+	pausing = true
+	set_game_state(false)
+	emit_signal("win", player)
+	
+func game_restart():
+	pausing = false
+	set_game_state(true)
+	emit_signal("restart")
+
 func new_round(bound):
 	if bound == Ball.Bounds.RIGHT:
 		emit_signal("update_score", Players.PLAYER1)
@@ -47,9 +57,9 @@ func new_round(bound):
 		emit_signal("update_score", Players.PLAYER2)
 		score_player_2 += 1
 
-	if score_player_1 == score_limit:
-		emit_signal("win", Players.PLAYER1)
-	elif score_player_2 == score_limit:
-		emit_signal("win", Players.PLAYER2)
+	if score_player_1 >= score_limit:
+		game_end(Players.PLAYER1)
+	elif score_player_2 >= score_limit:
+		game_end(Players.PLAYER2)
 	else:
 		emit_signal("restart")
